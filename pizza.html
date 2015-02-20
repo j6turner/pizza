@@ -9,51 +9,60 @@
     <script src="js/scripts.js"></script>
   </head>
 
-    <body>
+  <body>
+    <div class="container">
+      <h1><strong>Pizza Co.</strong></h1>
+      <hr >
+      <div class="row">
 
-      <div class="container">
+        <div class="col-md-6">
+          <h2>Place an Order:</h2>
 
-        <h1><strong>Pizza Co.</strong></h1>
-        <hr >
-        <div class="row">
+          <form id="new-customer">
+            <div class="form-group">
+              <label for="name">First name: </label>
+              <input type="text" id="name" class="form-control" placeholder="Vivica Vance">
+            </div>
 
-          <div class="col-md-6">
-            <h2>Place an Order:</h2>
-
-            <form id="new-order">
-
+          <div id="new-pizzas">
+            <div class="new-pizza">
               <div class="form-group">
                 <label for="description">Cheese or Pepperoni?</label>
-<input type="text" id="description" class="form-control" placeholder="Cheese">
+                <input type="text" id="description" class="form-control" placeholder="Cheese">
               </div>
 
               <div class="form-group">
                 <label for="size">8-inch, 12-inch, or 16-inch?</label>
-<input type="number" min="8" max="16" id="size" class="form-control" placeholder="8">
+                <input type="number" min="8" max="16" id="size" class="form-control" placeholder="8">
               </div>
-
-              <button type="submit" class="btn btn-danger">Place Order</button>
-
-            </form>
-
+            </div>
           </div>
 
+            <span class="btn btn-success btn-md" id="add-pizza">Add Another Pizza</span>
+
+            <button type="submit" class="btn btn-danger btn-lg">Place Order</button>
+
+          </form>
 
 
-
-          <div class="col-md-6">
-            <h2>Order Details:</h2>
-
-            <form id="show-order">
-
-            </form>
-
-          </div>
+          <h2>Orders:</h2>
+          <ul id="orders">
+          </ul>
 
         </div>
 
+        <div class="col-md-6">
+          <div id="show-order">
+            <h2></h2>
+
+            <p>Customer: <span class="name"></span></p>
+            <p>Orders Placed: </p>
+            <ul id="pizzas">
+
+            </ul>
+          </div>
+        </div>
       </div>
-
-    </body>
-
+    </div>
+  </body>
 </html>

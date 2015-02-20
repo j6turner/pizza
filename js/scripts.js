@@ -1,50 +1,72 @@
-var pizzaCo = {
-
-  description: "",
-  size: 0,
-  slices: 0,
-
-    pizza: function() {
-      var name = this.name;
-      var description = this.description;
-      var size = this.size;
-      var slices = this.slices;
-      var falseDescription = (description !== "Cheese"
-                              || "Pepperoni");
-      var falseSize = (size "8" || "12" || "16"
-                       || isNaN(size));
-
-      if (falseDescription) {
-        alert("Our two pizza types are CHEESE and PEPPERONI.");
-      } else {
-        "<li>" + description + "</li>";
-      };
-
-      if (falseSize) {
-        alert("Our three pizza sizes are 8-inch, 12-inch,
-                and 16-inch.");
-      } else {
-        "<li>" + size + "</li>";
-      };
-
-    };
-
-});
-
 $(document).ready(function() {
-  $("form#new-order").submit(function(event) {
+ $("#add-pizza").click(function() {
+   $("#new-pizzas").append( '<div class="new-pizza">' +
+                                 '<div class="form-group">' +
+                                   '<label for="description">Cheese or Pepperoni?</label>' +
+                                   '<input type="text" id="description" class="form-control" placeholder="Cheese">' +
+                                 '</div>' +
+
+                                 '<div class="form-group">' +
+                                   '<label for="size">8-inch, 12-inch, or 16-inch?</label>' +
+                                   '<input type="number" min="8" max="16" id="size" class="form-control" placeholder="8">' +
+                                 '</div>' +
+                            '</div>' );
+ });
+
+  $("form#new-customer").submit(function(event) {
     event.preventDefault();
 
-    pizza.description = $(this).find("input#description").val();
-    pizza.size = parseInt($(this).find("input#size").val());
-    var newPizza = { description: };
 
-    $("input#description").val("");
-    $("input#size").val("");
+    var name = $("input#name").val()
 
-    $(".description-result").show();
-    $(".size-result").show();
+    var newCustomer = { name: name,
+                        pizzas: []
+                      };
 
 
+
+    $(".new-pizza").each(function() {
+      var description = $(this).find("input#description").val();
+      var size = $(this).find("input#size").val();
+      var newPizza = { description: description,
+                       size: size
+                     };
+      newCustomer.pizzas.push(newPizza);
+    });
+
+    var falseDescription = ((description !== "Cheese")
+                            || (description !== "Pepperoni"));
+    if (falseDescription) {
+      alert("The only available pizza types are CHEESE and PEPPERONI.");
+    };
+
+    var falseSize = ((size !== "8" || "12" || "16")
+                     || (isNaN(size)));
+    if (falseSize) {
+      alert("The only available pizza sizes are 8-inch, 12-inch,
+              and 16-inch.");
+    };
+
+    $("ul#orders").append("<li><span class='customer'>"
+                            + newCustomer.name
+                            + "</span></li>");
+
+    $(".customer").last().click(function() {
+      $("#show-order").show();
+      $("#show-order h2").text(newCustomer.name);
+      $(".name").text(newCustomer.name);
+      $("ul#pizzas").text("");
+      newCustomer.pizzas.forEach(function(pizza) {
+        $("ul#pizzas").append("<li>" + pizza.description
+                             + ", "
+                             + pizza.size + "-inch"
+                             + "</li>");
+      });
+    });
+
+
+        $("input#name").val("");
+        $("input#description").val("");
+        $("input#size").val("");
   });
 });
