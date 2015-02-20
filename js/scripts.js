@@ -34,18 +34,18 @@ $(document).ready(function() {
       newCustomer.pizzas.push(newPizza);
     });
 
-    var falseDescription = ((description !== "Cheese")
-                            || (description !== "Pepperoni"));
-    if (falseDescription) {
-      alert("The only available pizza types are CHEESE and PEPPERONI.");
-    };
-
-    var falseSize = ((size !== "8" || "12" || "16")
-                     || (isNaN(size)));
-    if (falseSize) {
-      alert("The only available pizza sizes are 8-inch, 12-inch,
-              and 16-inch.");
-    };
+//     var falseDescription = ((description !== "Cheese")
+//                             || (description !== "Pepperoni"));
+//     if (falseDescription) {
+//       alert("The only available pizza types are CHEESE and PEPPERONI.");
+//     };
+//
+//     var falseSize = ((size !== "8" || "12" || "16")
+//                      || (isNaN(size)));
+//     if (falseSize) {
+//       alert("The only available pizza sizes are 8-inch, 12-inch,
+//               and 16-inch.");
+//     };
 
     $("ul#orders").append("<li><span class='customer'>"
                             + newCustomer.name
