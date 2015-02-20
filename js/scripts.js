@@ -7,6 +7,7 @@ var pizzaCo = {
     pizza: function() {
       var description = this.description;
       var size = this.size;
+      var slices = this.slices;
     };
 
 });
