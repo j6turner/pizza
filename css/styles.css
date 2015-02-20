@@ -5,12 +5,14 @@
   background-color: #E7EFEF;
 
 }body {
+  border: 2px solid #565858;
+  padding: 15px 15px 15px 15px;
   background-color: #BCC0BC;
 }
 
 h1 {
   font-family: Helvetica;
-  color: #006B6B;
+  color: #A30000;
   text-align: center;
 }
 
