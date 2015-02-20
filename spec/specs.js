@@ -5,12 +5,12 @@ describe("pizzaCo", function() {
       expect(pizza.description).to.equal("Cheese");
   });
 
-  // it("returns size of pizza", function() {
-  //   var  pizza = { description: "Cheese",
-  //                    size: "8"};
-  //     expect(pizza.size).to.equal("8");
-  // });
-  //
+  it("returns size of pizza", function() {
+    var  pizza = { description: "Cheese",
+                     size: "8"};
+      expect(pizza.size).to.equal("8");
+  });
+
   // it("returns number of slices", function() {
   //   var pizza = { description: "Cheese",
   //                   size: "8",
