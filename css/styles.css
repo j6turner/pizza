@@ -1,5 +1,5 @@
 #show-order {
-  placeholder="8"
+  display: none;
   border: 3px solid #565858;
   padding: 20px 20px 20px 20px;
   background-color: #FAFFFA;
