@@ -28,8 +28,27 @@ $(document).ready(function() {
     $(".new-pizza").each(function() {
       var description = $(this).find("input#description").val();
       var size = $(this).find("input#size").val();
+
+      var slices = this.slices;
+        if (description === "Cheese" && size === 8) {
+          this.slices === 6;
+        } else if (description === "Cheese" && size === 12) {
+          this.slices === 8;
+        } else if (description === "Cheese" && size === 16) {
+          this.slices === 10;
+        } else if (description === "Pepperoni" && size === 8) {
+          this.slices === 8;
+        } else if (description === "Pepperoni" && size === 12) {
+          this.slices === 10;
+        } else if (description === "Cheese" && size === 16) {
+          this.slices === 12;
+        // } else {
+        //   alert("Please try again.")
+        };
+
       var newPizza = { description: description,
-                       size: size
+                       size: size,
+                       slices: slices
                      };
       newCustomer.pizzas.push(newPizza);
     });
@@ -60,6 +79,9 @@ $(document).ready(function() {
         $("ul#pizzas").append("<li>" + pizza.description
                              + ", "
                              + pizza.size + "-inch"
+                             + " ("
+                             + pizza.slices + " slices"
+                             + ")"
                              + "</li>");
       });
     });
