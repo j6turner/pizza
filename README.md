@@ -11,8 +11,8 @@ and [Bootstrap](http://http://getbootstrap.com/).
 Usage
 -----
 
-To view the site, either open the `pizza.html` file
-in a web browser or simply [click here](http://htmlpreview.github.com/?https://github.com/j6turner/pizza/blob/master/pizza.html). 
+To view the site, either open the `index.html` file
+in a web browser or simply [click here](http://htmlpreview.github.com/?https://github.com/j6turner/pizza/blob/master/index.html). 
 
 
 Author
