@@ -26,6 +26,7 @@
 
           <div id="new-pizzas">
             <div class="new-pizza">
+
               <div class="form-group">
                 <label for="description">Cheese or Pepperoni?</label>
                 <select id="description">
@@ -37,8 +38,14 @@
 
               <div class="form-group">
                 <label for="size">8-inch, 12-inch, or 16-inch?</label>
-                <input type="number" min="8" max="16" id="size" class="form-control" placeholder="8">
+                <select id="size">
+                  <option value="" disabled selected>-choose-</option>
+                  <option value="8-inch">8-inch</option>
+                  <option value="12-inch">12-inch</option>
+                  <option value="16-inch">16-inch</option>
+                </select>
               </div>
+
             </div>
           </div>
 
