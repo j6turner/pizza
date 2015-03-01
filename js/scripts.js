@@ -29,7 +29,7 @@ $(document).ready(function() {
       var description = $(this).find("input#description").val();
       var size = $(this).find("input#size").val();
 
-      sliceCount: function() {
+      sliceCount: (function() {
         var slices = this.slices;
         if (description === "Cheese" && size === 8) {
           this.slices === 6;
@@ -47,7 +47,7 @@ $(document).ready(function() {
         //   alert("Please try again.")
         };
         return slices;
-      };
+      });
 
       var newPizza = { description: description,
                        size: size,
