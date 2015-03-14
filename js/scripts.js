@@ -1,18 +1,4 @@
 $(document).ready(function() {
- $("#add-pizza").click(function() {
-   $("#new-pizzas").append( '<div class="new-pizza">' +
-                                 '<div class="form-group">' +
-                                   '<label for="description">Cheese or Pepperoni?</label>' +
-                                   '<input type="text" id="description" class="form-control" placeholder="Cheese">' +
-                                 '</div>' +
-
-                                 '<div class="form-group">' +
-                                   '<label for="size">8-inch, 12-inch, or 16-inch?</label>' +
-                                   '<input type="number" min="8" max="16" id="size" class="form-control" placeholder="8">' +
-                                 '</div>' +
-                            '</div>' );
- });
-
   $("form#new-customer").submit(function(event) {
     event.preventDefault();
 
@@ -26,48 +12,31 @@ $(document).ready(function() {
 
 
     $(".new-pizza").each(function() {
-      var description = $(this).find("input#description").val();
-      var size = $(this).find("input#size").val();
-
-      sliceCount: (function() {
-        var slices = this.slices;
-        if (description === "Cheese" && size === 8) {
-          this.slices === 6;
-        } else if (description === "Cheese" && size === 12) {
-          this.slices === 8;
-        } else if (description === "Cheese" && size === 16) {
-          this.slices === 10;
-        } else if (description === "Pepperoni" && size === 8) {
-          this.slices === 8;
-        } else if (description === "Pepperoni" && size === 12) {
-          this.slices === 10;
-        } else if (description === "Cheese" && size === 16) {
-          this.slices === 12;
-        // } else {
-        //   alert("Please try again.")
-        };
-        return slices;
-      });
+      var description = $(this).find("select#description").val();
+      var size = $(this).find("select#size").val();
 
       var newPizza = { description: description,
                        size: size,
-                       slices: slices
+                       sliceCount: function() {
+                         var slices = 6;
+                         if (this.description === "Cheese" && this.size === 8) {
+                           slices = 6;
+                         } else if (this.description === "Cheese" && this.size === 12) {
+                           slices = 8;
+                         } else if (this.description === "Cheese" && this.size === 16) {
+                           slices = 10;
+                         } else if (this.description === "Pepperoni" && this.size === 8) {
+                           slices = 8;
+                         } else if (this.description === "Pepperoni" && this.size === 12) {
+                           slices = 10;
+                         } else {
+                           slices = 12;
+                         }
+                         return slices;
+                       }
                      };
       newCustomer.pizzas.push(newPizza);
     });
-
-//     var falseDescription = ((description !== "Cheese")
-//                             || (description !== "Pepperoni"));
-//     if (falseDescription) {
-//       alert("The only available pizza types are CHEESE and PEPPERONI.");
-//     };
-//
-//     var falseSize = ((size !== "8" || "12" || "16")
-//                      || (isNaN(size)));
-//     if (falseSize) {
-//       alert("The only available pizza sizes are 8-inch, 12-inch,
-//               and 16-inch.");
-//     };
 
     $("ul#orders").append("<li><span class='customer'>"
                             + newCustomer.name
@@ -81,9 +50,9 @@ $(document).ready(function() {
       newCustomer.pizzas.forEach(function(pizza) {
         $("ul#pizzas").append("<li>" + pizza.description
                              + ", "
-                             + pizza.size + "-inch"
+                             + pizza.size
                              + " ("
-                             + pizza.slices + " slices"
+                             + pizza.sliceCount.slices + " slices"
                              + ")"
                              + "</li>");
       });
@@ -91,7 +60,7 @@ $(document).ready(function() {
 
 
         $("input#name").val("");
-        $("input#description").val("");
-        $("input#size").val("");
+        $("select#description").val("");
+        $("select#size").val("");
   });
 });
