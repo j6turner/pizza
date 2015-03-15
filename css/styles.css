@@ -48,3 +48,11 @@ h4 {
   font-weight: bold;
   background-color: #FFFFFF;
 }
+
+span.name {
+  color: #CC4040
+}
+
+ul#pizzas {
+  color: #CC4040
+}
