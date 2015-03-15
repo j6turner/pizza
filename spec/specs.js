@@ -12,18 +12,17 @@ describe("pizzaCo", function() {
   });
 
   it("returns size of pizza", function() {
-    var  pizza = { name: "Vivica Vance",
-                   description: "Cheese",
-                   size: "8" };
-      expect(pizza.size).to.equal("8");
-  });
-
-  it("returns number of slices", function() {
     var pizza = { name: "Vivica Vance",
                   description: "Cheese",
-                  size: "8",
-                  slices: "6" };
-      expect(pizza.slices).to.equal("6")
+                  size: "8-inch" };
+      expect(pizza.size).to.equal("8-inch");
+  });
+
+  it("returns number of slices for a 16-inch Cheese pizza", function() {
+    var pizza = { description: "Cheese",
+                  size: "16-inch"};
+    var slices = pizza.sliceCount();
+      expect(pizza.slices).to.equal(10);
   });
 
 });

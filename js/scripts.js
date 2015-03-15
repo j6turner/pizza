@@ -2,14 +2,11 @@ $(document).ready(function() {
   $("form#new-customer").submit(function(event) {
     event.preventDefault();
 
-
     var name = $("input#name").val()
 
     var newCustomer = { name: name,
                         pizzas: []
                       };
-
-
 
     $(".new-pizza").each(function() {
       var description = $(this).find("select#description").val();
@@ -57,9 +54,9 @@ $(document).ready(function() {
       });
     });
 
+    $("input#name").val("");
+    $("select#description").val("");
+    $("select#size").val("");
 
-        $("input#name").val("");
-        $("select#description").val("");
-        $("select#size").val("");
   });
 });
