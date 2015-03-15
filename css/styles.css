@@ -1,11 +1,14 @@
 #show-order {
   display: none;
   border: 3px solid #565858;
+  border-radius: 10px;
   padding: 20px 20px 20px 20px;
   background-color: #FAFFFA;
+}
 
-}body {
+body {
   border: 2px solid #565858;
+  border-radius: 10px;
   padding: 15px 15px 15px 15px;
   background-color: #BCC0BC;
 }
@@ -38,4 +41,10 @@ h4 {
 
 .customer:hover {
   text-decoration: underline;
+}
+
+.btn:hover {
+  color: #E60000;
+  font-weight: bold;
+  background-color: #FFFFFF;
 }
