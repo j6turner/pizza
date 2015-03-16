@@ -1,4 +1,4 @@
-describe("pizzaCo", function() {
+describe("newPizza", function() {
 
   it("returns customer name", function() {
     var pizza = { name: "Vivica Vance" };
@@ -18,11 +18,13 @@ describe("pizzaCo", function() {
       expect(pizza.size).to.equal("8-inch");
   });
 
-  it("returns number of slices for a 16-inch Cheese pizza", function() {
-    var pizza = { description: "Cheese",
-                  size: "16-inch"};
-    var slices = pizza.sliceCount();
-      expect(pizza.slices).to.equal(10);
+  describe("sliceCount", function() {
+    it("returns number of slices for a 16-inch Cheese pizza", function() {
+      var pizza = Object.create(newPizza);
+      pizza.description = "Cheese";
+      pizza.size = "16-inch";
+        expect(pizza.slices(pizza.description, pizza.size)).to.equal(10);
+    });
   });
 
 });

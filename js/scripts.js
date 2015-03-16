@@ -5,7 +5,7 @@ $(document).ready(function() {
     var name = $("input#name").val()
 
     var newCustomer = { name: name,
-                        pizzas: []
+                        order: []
                       };
 
     $(".new-pizza").each(function() {
@@ -31,7 +31,7 @@ $(document).ready(function() {
                          return slices;
                        }
                      };
-      newCustomer.pizzas.push(newPizza);
+      newCustomer.order.push(newPizza);
     });
 
     $("ul#orders").append("<li><span class='customer'>"
@@ -42,9 +42,9 @@ $(document).ready(function() {
       $("#show-order").show();
       $("#show-order h2").text(newCustomer.name);
       $(".name").text(newCustomer.name);
-      $("ul#pizzas").text("");
-      newCustomer.pizzas.forEach(function(pizza) {
-        $("ul#pizzas").append("<li>" + pizza.description
+      $("ul#pizza").text("");
+      newCustomer.order.forEach(function(pizza) {
+        $("ul#pizza").append("<li>" + pizza.description
                              + ", "
                              + pizza.size
                              + " ("
