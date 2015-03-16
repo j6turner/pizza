@@ -3,7 +3,7 @@ Pizza Co.
 
 This JavaScript Web app allows user to order a pizza, choosing between Cheese and Pepperoni and specifying the size, which automatically translates to number of slices.
 
-Features include [JQuery](http://jquery.com/),
+Features include [jQuery](http://jquery.com/),
 [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/),
 and [Bootstrap](http://http://getbootstrap.com/).
 
