@@ -15,10 +15,10 @@ To view the site, either open the `index.html` file
 in a web browser or simply [click here](http://htmlpreview.github.com/?https://github.com/j6turner/pizza/blob/master/index.html).
 
 
-Bugs
+Known Bugs
 -----
 
-No known bugs as of 03-14-15.
+None as of 03-15-15.
 
 
 Author
