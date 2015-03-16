@@ -12,13 +12,14 @@ Usage
 -----
 
 To view the site, either open the `index.html` file
-in a web browser or simply [click here](http://htmlpreview.github.com/?https://github.com/j6turner/pizza/blob/master/index.html).
+in a Web browser or simply [click here](http://htmlpreview.github.com/?https://github.com/j6turner/pizza/blob/master/index.html).
 
 
 Known Bugs
 -----
 
-None as of 03-15-15.
+As of 03-15-15, Safari does not fully support the app,
+as an extra list item (empty) is created with each order.
 
 
 Author
