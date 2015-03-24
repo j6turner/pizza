@@ -18,7 +18,7 @@ in a Web browser or simply [click here](http://htmlpreview.github.com/?https://g
 Known Bugs
 -----
 
-As of 03-15-15, Safari does not fully support the app,
+As of 2015-03-15, Safari does not fully support the app,
 as an extra list item (empty) is created with each order.
 
 
